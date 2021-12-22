@@ -15,19 +15,26 @@ c0 = input('scrivi peso massa: ')
 a = input('scrivi larghezza buca: ')
 pot = input('scrivi profondità buca: ')
 
-if( fun( float(c0), float(a), float(pot), float(x1) )*fun( float(c0), float(a), float(pot), float(x2) ) < 0 ):
-  while(True):
-    
-  
-else:
-    #if(fun(c0,a,pot,x1) < epsilon):
-     # break
-  print('f(x2) = ' fun( float(c0), float(a), float(pot), float(x2) ) )
-  print('prova con un altro estremo')
+x2 = float(x2)
+c0 = float(c0)
+a = float(a)
+pot = float(pot)
+
+f1 = fun(c0, a, pot, x1)
+f2 = fun(c0, a, pot, x2)
+
+if( f1*f2 > 0 ):
+  print('riprova con un altro estremo')
+
+while(True):
+  xm = (x1 + x2) / 2
+  f2 = fun(c0, a, pot, xm)
+  if( f1*f2 < 0 ):
+    x2 = xm
+  else:
+    x1 = xm
 
 
-
-#for():
 
 
 
